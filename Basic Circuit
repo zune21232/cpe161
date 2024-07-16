@@ -1,0 +1,11 @@
+void setup()
+{
+ pinMode(1, OUTPUT); // ตัง้ค่าให้Pin 1 เป็ น OUTPUT
+}
+void loop()
+{
+ digitalWrite(1, HIGH); // ส่งสัญญาณ 1 (High) ออกไปที่pin 1
+ delay(1000); // รอ 1000 millisecond(s) หรือ 1 วินาที
+ digitalWrite(1, LOW); // ส่งสัญญาณ 0 (Low) ออกไปที่pin 1
+ delay(1000); // รอ 1000 millisecond(s) หรือ 1 วินาที
+}
