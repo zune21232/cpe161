@@ -1,0 +1,20 @@
+int dt = 0; //สรา้งตวัแปรเพอื่ เก็บคา่ จากเซน็ เซอร์
+void setup()
+{
+ pinMode(2, INPUT); // ให ้ขา Digital 2 เป็น input
+ pinMode(4, OUTPUT); // ให ้ขา Digital 4 เป็น output 
+ Serial.begin(9600); // ก าหนดอตั ราสง่ ขอ้มลู ของ Serial
+}
+void loop()
+{
+ 
+ dt = digitalRead(2); //อา่ นคา่ เซน็ เซอรจ์ ากขา D2 เก็บใน dt
+ Serial.print("motion = "); // แสดงค าว่า “motion =“ ออกทาง serial monitor 
+ Serial.println(dt); // แสดงข ้อมูลในตัวแปร dt ออกทาง serial monitor 
+ if (dt == 1){ //ตรวจสอบถ ้ามีการเคลื่อนไหว
+ digitalWrite(4,HIGH); // สง่ คา่ 1 เพื่อเปิดไฟ
+}else{ //ถ ้าไม่มีการเคลื่อนไหว
+ digitalWrite(4,LOW); // สง่ คา่ 0 เพื่อปิดไฟ
+}
+ delay(500); // รอ 0.5 วินาที
+}
